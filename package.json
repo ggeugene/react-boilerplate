@@ -1,0 +1,61 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --config internals/webpack.dev.ts",
+    "build": "webpack --mode production --config internals/webpack.prod.ts",
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "author": "ggeugene",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/brotli-webpack-plugin": "^1.1.0",
+    "@types/file-loader": "^4.2.0",
+    "@types/html-webpack-plugin": "^3.2.2",
+    "@types/mini-css-extract-plugin": "^0.9.1",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "@types/webpack": "^4.41.10",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "brotli-webpack-plugin": "^1.1.0",
+    "css-loader": "^3.5.1",
+    "eslint": "^6.8.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.0.4",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "prettier": "^2.0.4",
+    "sass-loader": "^8.0.2",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3",
+    "typescript-plugin-css-modules": "^2.2.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
